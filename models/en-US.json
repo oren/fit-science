@@ -28,6 +28,16 @@
                     ]
                 },
                 {
+                    "name":"DisclaimerIntent",
+                    "slots":[
+
+                    ],
+                    "samples":[
+                        "disclaimer",
+                        "legal"
+                    ]
+                },
+                {
                     "name":"MyNameIsIntent",
                     "slots":[
                         {

@@ -20,12 +20,32 @@ var handlers = {
         this.emit('SayHello');
     },
 
+    'DisclaimerIntent': function () {
+        this.emit('SayDisclaimer');
+    },
+
     'MyNameIsIntent': function () {
         this.emit('SayHelloName');
     },
 
     'SayHello': function () {
         var say = 'Fit Science help you lose fat or get stronger based on your goals and preferences. Do you want to lose fat, get stronger, or both? You can also ask me for list of programs.'
+        var reprompt = 'I learned from the best nutritionists and athlete coaches in the world. I learned from the best and will personalize the program for your needs.Reply with lose fat, get stronger, or both.'
+
+        var header = 'Fit Science'
+        var shouldEndSession = false
+
+        this.response.speak(say)
+                     .cardRenderer('Fit Science', say);
+
+        this.emit(':responseReady');
+    },
+
+    'SayDisclaimer': function () {
+        var say = 'Talk to your primary care provider before beginning any course of exercise.'
+
+        var header = 'Fit Science'
+
         this.response.speak(say)
                      .cardRenderer('Fit Science', say);
 
